@@ -1,0 +1,24 @@
+SHOES_APP
+
+
+WARM
+1-summer
+4-spring
+7-fall
+10-winter
+
+color
+1 - white
+2 - gold, beige
+3 - silver
+4 - orange, pink
+5 - red
+6 - green
+7 - blue
+8 - brown
+9 - gray
+10 - black
+
+comfort
+1-vobec
+10-uplne pohodlne
