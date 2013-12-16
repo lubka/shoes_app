@@ -1,1 +1,17 @@
-start
+{block scripts}
+<script>
+$(function() {
+    $( "#slider" ).slider();
+  });
+</script>
+{/block}
+
+{block content}
+<body>
+<div id="slider"></div>
+<br>
+{for $i=1; $i <= 50; $i++}
+<img src="{$basePath}/images/{$i}.jpg" style="width:450px !important; height:450px !important" class="hidden">
+{/for}
+</body>
+{/block}

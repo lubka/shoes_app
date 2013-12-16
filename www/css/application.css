@@ -1,0 +1,180 @@
+body.left {
+  background: -moz-linear-gradient(left, rgba(236, 32, 121, 0.75) 0%, rgba(255, 255, 255, 0.13) 59%, rgba(255, 255, 255, 0) 71%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(236, 32, 121, 0.75)), color-stop(59%, rgba(255, 255, 255, 0.13)), color-stop(71%, rgba(255, 255, 255, 0)));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, rgba(236, 32, 121, 0.75) 0%, rgba(255, 255, 255, 0.13) 59%, rgba(255, 255, 255, 0) 71%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, rgba(236, 32, 121, 0.75) 0%, rgba(255, 255, 255, 0.13) 59%, rgba(255, 255, 255, 0) 71%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, rgba(236, 32, 121, 0.75) 0%, rgba(255, 255, 255, 0.13) 59%, rgba(255, 255, 255, 0) 71%);
+  /* IE10+ */
+  background: linear-gradient(to right, rgba(236, 32, 121, 0.75) 0%, rgba(255, 255, 255, 0.13) 59%, rgba(255, 255, 255, 0) 71%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bfec2079', endColorstr='#00ffffff', GradientType=1);
+  /* IE6-9 */
+}
+body.right {
+  background: -moz-linear-gradient(left, rgba(255, 255, 255, 0) 29%, rgba(255, 255, 255, 0.13) 41%, rgba(236, 32, 121, 0.75) 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(29%, rgba(255, 255, 255, 0)), color-stop(41%, rgba(255, 255, 255, 0.13)), color-stop(100%, rgba(236, 32, 121, 0.75)));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 29%, rgba(255, 255, 255, 0.13) 41%, rgba(236, 32, 121, 0.75) 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, rgba(255, 255, 255, 0) 29%, rgba(255, 255, 255, 0.13) 41%, rgba(236, 32, 121, 0.75) 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, rgba(255, 255, 255, 0) 29%, rgba(255, 255, 255, 0.13) 41%, rgba(236, 32, 121, 0.75) 100%);
+  /* IE10+ */
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 29%, rgba(255, 255, 255, 0.13) 41%, rgba(236, 32, 121, 0.75) 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#bfec2079', GradientType=1);
+  /* IE6-9 */
+}
+div.form {
+  background: #FFFFFF;
+  box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 40px;
+  width: 750px;
+  height: 520px;
+  margin: 0px auto;
+  overflow: hidden;
+  padding: 50px 40px;
+  z-index: 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.teams {
+  width: 100%;
+  height: 150px;
+  position: absolute;
+  top: 600px;
+  text-align: center;
+}
+.teams .right {
+  width: 100px;
+  float: right;
+  margin-right: 50px;
+}
+.teams .left {
+  width: 100px;
+  float: left;
+  margin-left: 50px;
+}
+.teams .right,
+.teams .left {
+  background-image: url("../images/gray.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: inherit;
+}
+.teams .right.active,
+.teams .left.active {
+  background-image: url("../images/pink.jpg") !important;
+}
+.teams .right .score,
+.teams .left .score {
+  padding-top: 150px;
+}
+/* entire container, keeps perspective */
+.flip-container {
+  -webkit-perspective: 1000;
+  /* flip speed goes here */
+}
+.flip-container.flip .flipper {
+  -webkit-transform: rotateY(180deg);
+}
+.flip-container,
+.flip-container .front,
+.flip-container .back {
+  width: 800px;
+  height: 600px;
+}
+.flip-container .flipper {
+  -webkit-transition: 2s;
+  -webkit-transform-style: preserve-3d;
+  position: relative;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* hide back of pane during swap */
+  /* front pane, placed above back */
+  /* back, initially hidden pane */
+}
+.flip-container .flipper .front,
+.flip-container .flipper .back {
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.flip-container .flipper .front {
+  -webkit-z-index: 1;
+}
+.flip-container .flipper .front > table td.selected {
+  color: white;
+  background-color: #8080ff;
+}
+.flip-container .flipper .front > table td.answered {
+  background-color: #c0c0c0;
+}
+.flip-container .flipper .back {
+  -webkit-transform: rotateY(180deg);
+}
+.flip-container .flipper .back div.question {
+  font-weight: bold;
+  color: black;
+  font-size: 1.5em;
+  letter-spacing: 0.05em;
+}
+.flip-container .flipper .back button.tlacitko {
+  width: inherit;
+  height: 190px;
+}
+.flip-container .flipper .back .answerStatus {
+  position: absolute;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+}
+@-webkit-keyframes loaderSprite {
+  from {
+    background-position: 0px;
+  }
+  to {
+    background-position: -2500px;
+  }
+}
+@-moz-keyframes loaderSprite {
+  from {
+    background-position: 0px;
+  }
+  to {
+    background-position: -2500px;
+  }
+}
+@keyframes loaderSprite {
+  from {
+    background-position: 0px;
+  }
+  to {
+    background-position: -2500px;
+  }
+}
+.loader {
+  margin: 250px auto;
+  width: 100px;
+  height: 100px;
+  background-image: url("../images/loader.png");
+  -webkit-animation: loaderSprite 1.25s steps(25, end) infinite;
+  -moz-animation: loaderSprite 1.25s steps(25, end) infinite;
+  animation: loaderSprite 1.25s steps(25, end) infinite;
+}
+.loaderWrapper {
+  width: 800px;
+  height: 600px;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.8);
+}

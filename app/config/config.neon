@@ -16,23 +16,29 @@ common:
 			errorPresenter: Error
 
 		database:
-			dsn: 'mysql:host=localhost;dbname=test'
-			user:
-			password:
+			dsn: '%database.driver%:host=%database.host%;dbname=%database.dbname%'
+			user: %database.user%
+			password: %database.password%
 
 		session:
 			expiration: 14 days
 
 
 	services:
+		database: @Nette\Database\Connection
 		authenticator: Authenticator
 		routerFactory: RouterFactory
 		router: @routerFactory::createRouter
+		model: Model( @database )
 
 
 	factories:
 
-
-production < common:
-
 development < common:
+	parameters:
+		database:
+			driver: mysql
+			host: localhost
+			dbname: shoes_app
+			user: root
+			password: root
