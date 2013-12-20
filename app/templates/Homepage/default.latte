@@ -1,17 +1,46 @@
 {block scripts}
 <script>
+
 $(function() {
-    $( "#slider" ).slider();
-  });
+	$( "#comfort" ).slider({ max: 10});
+	$( "#color" ).slider({ max: 10});
+	$( ".slider" ).slider({
+    slide: function( event, ui ) {
+		$.when(
+			$.ajax({
+            	url: {link getShoes!},
+                type: 'GET',
+                data : {
+					"value" : ui.value,
+					"name" : $(this).attr("id"),
+                }
+            })
+        ).then(function(payload) {
+        	if(payload.image) {
+        		$( "#" + payload.image ).removeClass("hidden");
+        		console.log(payload.image);
+        	}
+		   	
+		   	if(payload.message == 'Failure') {
+
+		    	} else if(payload.message == 'Success') {
+		    		console.log("succ");
+		    	}
+        });
+    	}
+    })
+});
+
 </script>
 {/block}
 
 {block content}
 <body>
-<div id="slider"></div>
+<div class="slider" id="comfort"></div>
+<div class="slider" id="color"></div>
 <br>
 {for $i=1; $i <= 50; $i++}
-<img src="{$basePath}/images/{$i}.jpg" style="width:450px !important; height:450px !important" class="hidden">
+<img src="{$basePath}/images/{$i}.jpg" style="width:450px !important; height:450px !important" class="hidden" id="{$i}">
 {/for}
 </body>
 {/block}
