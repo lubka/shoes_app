@@ -16,6 +16,7 @@ $(function() {
             })
         ).then(function(payload) {
         	if(payload.image) {
+                $("img").addClass("hidden");
         		$( "#" + payload.image ).removeClass("hidden");
         		console.log(payload.image);
         	}
@@ -35,21 +36,30 @@ $(function() {
 
 {block content}
 <body>
-<div class="sliders" style="padding-left:450px; padding-top:200px;">
-<div class="slider" id="comfort"></div>
-<br>
-<div class="slider" id="color"></div>
-<br>
-<div class="slider" id="formal"></div>
-<br>
-<div class="slider" id="weather"></div>
-<br>
-<div class="slider" id="price"></div>
-<br>
-</div>
+    <div class="sliders" style="padding-left:450px; padding-top:70px;">
+        <h9>comfortable </h9> <h9 style="padding-left:50px;">uncomfortable </h9>
+        <div class="slider" id="comfort"></div>
+        <br>
+
+        <h9>bright </h9> <h9 style="padding-left:125px;">dark color</h9>
+        <div class="slider" id="color"></div>
+        <br>
+
+        {* <h9>informal </h9> <h9 style="padding-left:130px;">formal </h9>
+        <div class="slider" id="formal"></div>
+        <br> *}
+
+        <h9>warm</h9> <h9 style="padding-left:110px;">cold weather</h9>
+        <div class="slider" id="weather"></div>
+        <br>
+
+        <h9>cheap </h9><h9 style="padding-left:125px;">expensive </h9>
+        <div class="slider" id="price"></div>
+        <br>
+    </div>
 {for $i=1; $i <= 50; $i++}
-<div class="shoe" style="margin-top:-400px; padding-right:300px;">
-<img src="{$basePath}/images/{$i}.jpg" style="width:450px !important; height:450px !important" class="hidden" id="{$i}">
+<div class="shoe" style="margin-top:-300px; padding-right:300px;">
+<img src="{$basePath}/images/{$i}.jpg" style="width:350px !important; height:350px !important" class="hidden" id="{$i}">
 <div>
 {/for}
 </body>

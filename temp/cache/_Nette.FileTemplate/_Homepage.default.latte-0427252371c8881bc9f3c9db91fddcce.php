@@ -1,21 +1,20 @@
-<?php //netteCache[01]000384a:2:{s:4:"time";s:21:"0.38632300 1387451647";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:62:"C:\xampp\htdocs\shoes_app\app\templates\Homepage\default.latte";i:2;i:1387451635;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"695f643 released on 2013-11-05";}}}?><?php
+<?php //netteCache[01]000384a:2:{s:4:"time";s:21:"0.59855400 1388869111";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:62:"C:\xampp\htdocs\shoes_app\app\templates\Homepage\default.latte";i:2;i:1388869104;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"695f643 released on 2013-11-05";}}}?><?php
 
 // source file: C:\xampp\htdocs\shoes_app\app\templates\Homepage\default.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'w66nnxseu0')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'yiri4w94e5')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block scripts
 //
-if (!function_exists($_l->blocks['scripts'][] = '_lbbe8404f83f_scripts')) { function _lbbe8404f83f_scripts($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['scripts'][] = '_lb14394e4971_scripts')) { function _lb14394e4971_scripts($_l, $_args) { extract($_args)
 ?><script>
 
 $(function() {
-	$( "#comfort" ).slider({ max: 10});
-	$( "#color" ).slider({ max: 10});
+	$( ".slider" ).slider({ max: 10});
 	$( ".slider" ).slider({
     slide: function( event, ui ) {
 		$.when(
@@ -29,6 +28,7 @@ $(function() {
             })
         ).then(function(payload) {
         	if(payload.image) {
+                $("img").addClass("hidden");
         		$( "#" + payload.image ).removeClass("hidden");
         		console.log(payload.image);
         	}
@@ -50,14 +50,30 @@ $(function() {
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lb0bdeed1eb3_content')) { function _lb0bdeed1eb3_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lbf39196e9d3_content')) { function _lbf39196e9d3_content($_l, $_args) { extract($_args)
 ?><body>
-<div class="slider" id="comfort"></div>
-<div class="slider" id="color"></div>
-<br />
+    <div class="sliders" style="padding-left:450px; padding-top:70px;">
+        <h9>comfortable </h9> <h9 style="padding-left:50px;">uncomfortable </h9>
+        <div class="slider" id="comfort"></div>
+        <br />
+
+        <h9>bright </h9> <h9 style="padding-left:125px;">dark color</h9>
+        <div class="slider" id="color"></div>
+        <br />
+
+                <h9>warm</h9> <h9 style="padding-left:110px;">cold weather</h9>
+        <div class="slider" id="weather"></div>
+        <br />
+
+        <h9>cheap </h9><h9 style="padding-left:125px;">expensive </h9>
+        <div class="slider" id="price"></div>
+        <br />
+    </div>
 <?php for ($i=1; $i <= 50; $i++): ?>
+<div class="shoe" style="margin-top:-300px; padding-right:300px;">
 <img src="<?php echo htmlSpecialChars($basePath) ?>/images/<?php echo htmlSpecialChars($i) ?>
-.jpg" style="width:450px !important; height:450px !important" class="hidden" id="<?php echo htmlSpecialChars($i) ?>" />
+.jpg" style="width:350px !important; height:350px !important" class="hidden" id="<?php echo htmlSpecialChars($i) ?>" />
+<div>
 <?php endfor ?>
 </body>
 <?php

@@ -1,30 +1,30 @@
-<?php //netteCache[01]000375a:2:{s:4:"time";s:21:"0.22717900 1387446912";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:53:"C:\xampp\htdocs\shoes_app\app\templates\@layout.latte";i:2;i:1387446726;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"695f643 released on 2013-11-05";}}}?><?php
+<?php //netteCache[01]000375a:2:{s:4:"time";s:21:"0.45819300 1388830670";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:53:"C:\xampp\htdocs\shoes_app\app\templates\@layout.latte";i:2;i:1388830659;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"695f643 released on 2013-11-05";}}}?><?php
 
 // source file: C:\xampp\htdocs\shoes_app\app\templates\@layout.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'hn994hks4h')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'ripaln8l3a')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block title
 //
-if (!function_exists($_l->blocks['title'][] = '_lbf0f22cfe98_title')) { function _lbf0f22cfe98_title($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['title'][] = '_lbfda7105191_title')) { function _lbfda7105191_title($_l, $_args) { extract($_args)
 ?>Shoes app<?php
 }}
 
 //
 // block head
 //
-if (!function_exists($_l->blocks['head'][] = '_lb2b5498576d_head')) { function _lb2b5498576d_head($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['head'][] = '_lb0cda0ebdf4_head')) { function _lb0cda0ebdf4_head($_l, $_args) { extract($_args)
 ;
 }}
 
 //
 // block scripts
 //
-if (!function_exists($_l->blocks['scripts'][] = '_lb9badf4cbff_scripts')) { function _lb9badf4cbff_scripts($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['scripts'][] = '_lbbc35188da8_scripts')) { function _lbbc35188da8_scripts($_l, $_args) { extract($_args)
 ?></html>
 <?php
 }}
@@ -94,13 +94,10 @@ ob_start(); call_user_func(reset($_l->blocks['title']), $_l, get_defined_vars())
 <?php Nette\Latte\Macros\UIMacros::callBlock($_l, 'content', $template->getParameters()) ?>
 			</div>
 		</div>
-		<div class="row">
+		<div class="row" style="padding-top:420px; padding-left:0px; position:absolute;">
 			<div class="span3 pull-right">
 				<blockquote class="pull-right"><img src="<?php echo htmlSpecialChars($basePath) ?>/images/buffalo.jpg" style=" width:100px !important;" /></blockquote>
 			</div>
-		</div>
-		<div id="footer">
-		</div>
 	</div>
 </body>
 <?php call_user_func(reset($_l->blocks['scripts']), $_l, get_defined_vars()) ; 
