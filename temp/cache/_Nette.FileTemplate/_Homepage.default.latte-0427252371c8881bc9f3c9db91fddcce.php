@@ -1,16 +1,16 @@
-<?php //netteCache[01]000384a:2:{s:4:"time";s:21:"0.59855400 1388869111";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:62:"C:\xampp\htdocs\shoes_app\app\templates\Homepage\default.latte";i:2;i:1388869104;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"695f643 released on 2013-11-05";}}}?><?php
+<?php //netteCache[01]000384a:2:{s:4:"time";s:21:"0.15294600 1388958307";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:62:"C:\xampp\htdocs\shoes_app\app\templates\Homepage\default.latte";i:2;i:1388958251;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"695f643 released on 2013-11-05";}}}?><?php
 
 // source file: C:\xampp\htdocs\shoes_app\app\templates\Homepage\default.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'yiri4w94e5')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'dopb13bjmc')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block scripts
 //
-if (!function_exists($_l->blocks['scripts'][] = '_lb14394e4971_scripts')) { function _lb14394e4971_scripts($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['scripts'][] = '_lb2c28194df8_scripts')) { function _lb2c28194df8_scripts($_l, $_args) { extract($_args)
 ?><script>
 
 $(function() {
@@ -22,8 +22,13 @@ $(function() {
             	url: <?php echo Nette\Templating\Helpers::escapeJs($_control->link("getShoes!")) ?>,
                 type: 'GET',
                 data : {
-					"value" : ui.value,
+					 "value" : ui.value,
 					"name" : $(this).attr("id"),
+                    "comfort": $("#comfort").slider("value"),
+                    "color": $("#color").slider("value"),
+                    "formal": $("#formal").slider("value"),
+                    "weather": $("#weather").slider("value"),
+                    "price": $("#price").slider("value"),
                 }
             })
         ).then(function(payload) {
@@ -50,7 +55,7 @@ $(function() {
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lbf39196e9d3_content')) { function _lbf39196e9d3_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lb1921663e25_content')) { function _lb1921663e25_content($_l, $_args) { extract($_args)
 ?><body>
     <div class="sliders" style="padding-left:450px; padding-top:70px;">
         <h9>comfortable </h9> <h9 style="padding-left:50px;">uncomfortable </h9>
@@ -61,7 +66,11 @@ if (!function_exists($_l->blocks['content'][] = '_lbf39196e9d3_content')) { func
         <div class="slider" id="color"></div>
         <br />
 
-                <h9>warm</h9> <h9 style="padding-left:110px;">cold weather</h9>
+        <h9>informal </h9> <h9 style="padding-left:130px;">formal </h9>
+        <div class="slider" id="formal"></div>
+        <br />
+
+        <h9>warm</h9> <h9 style="padding-left:110px;">cold weather</h9>
         <div class="slider" id="weather"></div>
         <br />
 

@@ -10,8 +10,13 @@ $(function() {
             	url: {link getShoes!},
                 type: 'GET',
                 data : {
-					"value" : ui.value,
+					 "value" : ui.value,
 					"name" : $(this).attr("id"),
+                    "comfort": $("#comfort").slider("value"),
+                    "color": $("#color").slider("value"),
+                    "formal": $("#formal").slider("value"),
+                    "weather": $("#weather").slider("value"),
+                    "price": $("#price").slider("value"),
                 }
             })
         ).then(function(payload) {
@@ -45,9 +50,9 @@ $(function() {
         <div class="slider" id="color"></div>
         <br>
 
-        {* <h9>informal </h9> <h9 style="padding-left:130px;">formal </h9>
+        <h9>informal </h9> <h9 style="padding-left:130px;">formal </h9>
         <div class="slider" id="formal"></div>
-        <br> *}
+        <br>
 
         <h9>warm</h9> <h9 style="padding-left:110px;">cold weather</h9>
         <div class="slider" id="weather"></div>
