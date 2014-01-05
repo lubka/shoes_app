@@ -112,7 +112,7 @@ class Model extends Nette\Object {
 				->where("price",$price)
 				->order('RAND()')
 				->fetch();
-		return $id->id;
+		return $color;
 		}
 	}
 
