@@ -1,16 +1,16 @@
-<?php //netteCache[01]000384a:2:{s:4:"time";s:21:"0.02723500 1389005727";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:62:"C:\xampp\htdocs\shoes_app\app\templates\Homepage\default.latte";i:2;i:1388959187;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"695f643 released on 2013-11-05";}}}?><?php
+<?php //netteCache[01]000384a:2:{s:4:"time";s:21:"0.09292200 1389009753";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:62:"C:\xampp\htdocs\shoes_app\app\templates\Homepage\default.latte";i:2;i:1389009735;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"695f643 released on 2013-11-05";}}}?><?php
 
 // source file: C:\xampp\htdocs\shoes_app\app\templates\Homepage\default.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'n80w8gi5jx')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'a9rj3zzzik')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block scripts
 //
-if (!function_exists($_l->blocks['scripts'][] = '_lb5132502c12_scripts')) { function _lb5132502c12_scripts($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['scripts'][] = '_lbb5cbac0bfd_scripts')) { function _lbb5cbac0bfd_scripts($_l, $_args) { extract($_args)
 ?><script>
 
 $(function() {
@@ -26,7 +26,7 @@ $(function() {
 					"name" : $(this).attr("id"),
                     "comfort": $("#comfort").slider("value"),
                     "color": $("#color").slider("value"),
-                    "formal": $("#formal").slider("value"),
+                    // "formal": $("#formal").slider("value"),
                     "weather": $("#weather").slider("value"),
                     "price": $("#price").slider("value"),
                 }
@@ -55,7 +55,7 @@ $(function() {
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lb5b82392fa8_content')) { function _lb5b82392fa8_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lb5ef699007c_content')) { function _lb5ef699007c_content($_l, $_args) { extract($_args)
 ?><body>
     <div class="sliders" style="padding-left:450px; padding-top:70px;">
         <h9>comfortable </h9> <h9 style="padding-left:50px;">uncomfortable </h9>
@@ -66,11 +66,7 @@ if (!function_exists($_l->blocks['content'][] = '_lb5b82392fa8_content')) { func
         <div class="slider" id="color"></div>
         <br />
 
-        <h9>informal </h9> <h9 style="padding-left:130px;">formal </h9>
-        <div class="slider" id="formal"></div>
-        <br />
-
-        <h9>warm</h9> <h9 style="padding-left:110px;">cold weather</h9>
+                <h9>warm</h9> <h9 style="padding-left:110px;">cold weather</h9>
         <div class="slider" id="weather"></div>
         <br />
 

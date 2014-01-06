@@ -21,7 +21,7 @@ class Model extends Nette\Object {
 		return $this->db->table('shoes');
 	}
 
-	public function getShoe($comfort, $color, $formal, $weather, $price){
+	public function getShoe($comfort, $color, $weather, $price){
 		$comfortFinal = $this->getComfort($comfort);
 		$colorFinal = $this->getColor($color);
 		$weatherFinal = $this->getWeather($weather);
@@ -40,7 +40,28 @@ class Model extends Nette\Object {
 			$color = $colorFinal;
 			$price = $priceFinal;
 
-			$shoes2 = $this->getShoes()->where("season",$weatherFinal)->fetchPairs('color');
+			$shoes = $this->getShoes()->where("season", $weatherFinal)->fetchPairs('heel');
+			$shoesArray = array();
+
+			foreach($shoes as $s){
+				$shoesArray[] = $s->heel; 
+			};
+
+			$i = 0;
+			if(!in_array($heel, $shoesArray, true)){
+			while (!in_array($heel, $shoesArray, true)){
+				$i++;
+				if(in_array(($heel + $i), $shoesArray,true)){
+					$heel = $heel + $i;
+				} 
+				elseif (in_array(($heel - $i), $shoesArray,true)){
+					$heel = $heel - $i;
+					}
+				}
+			}
+
+
+			$shoes2 = $this->getShoes()->where("season",$weatherFinal)->where("heel",$heel)->fetchPairs('color');
 			$shoesArray2 = array();
 
 			foreach($shoes2 as $s){
@@ -57,26 +78,6 @@ class Model extends Nette\Object {
 					} 
 					elseif (in_array(($color - $j), $shoesArray2,true)){
 						$color = $color - $j;
-					}
-				}
-			}
-
-			$shoes = $this->getShoes()->where("season", $weatherFinal)->where("color",$color)->fetchPairs('heel');
-			$shoesArray = array();
-
-			foreach($shoes as $s){
-				$shoesArray[] = $s->heel; 
-			};
-
-			$i = 0;
-			if(!in_array($heel, $shoesArray, true)){
-			while (!in_array($heel, $shoesArray, true)){
-				$i++;
-				if(in_array(($heel + $i), $shoesArray,true)){
-					$heel = $heel + $i;
-				} 
-				elseif (in_array(($heel - $i), $shoesArray,true)){
-					$heel = $heel - $i;
 					}
 				}
 			}
