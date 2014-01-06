@@ -1,16 +1,16 @@
-<?php //netteCache[01]000384a:2:{s:4:"time";s:21:"0.23845700 1388959420";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:62:"C:\xampp\htdocs\shoes_app\app\templates\Homepage\default.latte";i:2;i:1388959187;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"695f643 released on 2013-11-05";}}}?><?php
+<?php //netteCache[01]000384a:2:{s:4:"time";s:21:"0.02723500 1389005727";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:62:"C:\xampp\htdocs\shoes_app\app\templates\Homepage\default.latte";i:2;i:1388959187;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"695f643 released on 2013-11-05";}}}?><?php
 
 // source file: C:\xampp\htdocs\shoes_app\app\templates\Homepage\default.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'ihy6fmlw1d')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'n80w8gi5jx')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block scripts
 //
-if (!function_exists($_l->blocks['scripts'][] = '_lbbf820c40c4_scripts')) { function _lbbf820c40c4_scripts($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['scripts'][] = '_lb5132502c12_scripts')) { function _lb5132502c12_scripts($_l, $_args) { extract($_args)
 ?><script>
 
 $(function() {
@@ -55,7 +55,7 @@ $(function() {
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lb75859b28f8_content')) { function _lb75859b28f8_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lb5b82392fa8_content')) { function _lb5b82392fa8_content($_l, $_args) { extract($_args)
 ?><body>
     <div class="sliders" style="padding-left:450px; padding-top:70px;">
         <h9>comfortable </h9> <h9 style="padding-left:50px;">uncomfortable </h9>

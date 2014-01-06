@@ -8,7 +8,8 @@ class HomepagePresenter extends BasePresenter
 {
 	public function renderDefault()
 	{
-		dump($this->model->getShoe(0,10,0,0,0));
+		dump($this->model->getShoe(10,10,0,10,0));
+		dump($this->model->getComfort(0));
 	}
 
 	public function handleGetShoes() {

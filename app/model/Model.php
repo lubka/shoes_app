@@ -28,8 +28,8 @@ class Model extends Nette\Object {
 		$priceFinal = $this->getPrice($price);
 
 		
-		// $id = $this->getShoes()->where('price', $priceFinal)->order('RAND()')->fetch();
 		$id = $this->findAverage($comfortFinal, $colorFinal, $weatherFinal, $priceFinal);
+		// $id = $colorFinal;
 		return $id;
 
 	}
@@ -40,27 +40,7 @@ class Model extends Nette\Object {
 			$color = $colorFinal;
 			$price = $priceFinal;
 
-			$shoes = $this->getShoes()->where("season", $weatherFinal)->fetchPairs('heel');
-			$shoesArray = array();
-
-			foreach($shoes as $s){
-				$shoesArray[] = $s->heel; 
-			};
-
-			$i = 0;
-			if(!in_array($heel, $shoesArray, true)){
-			while (!in_array($heel, $shoesArray, true)){
-				$i++;
-				if(in_array(($heel + $i), $shoesArray,true)){
-					$heel = $heel + $i;
-				} 
-				elseif (in_array(($heel - $i), $shoesArray,true)){
-					$heel = $heel - $i;
-					}
-				}
-			}
-
-			$shoes2 = $this->getShoes()->where("season",$weatherFinal)->where("heel",$heel)->fetchPairs('color');
+			$shoes2 = $this->getShoes()->where("season",$weatherFinal)->fetchPairs('color');
 			$shoesArray2 = array();
 
 			foreach($shoes2 as $s){
@@ -80,6 +60,27 @@ class Model extends Nette\Object {
 					}
 				}
 			}
+
+			$shoes = $this->getShoes()->where("season", $weatherFinal)->where("color",$color)->fetchPairs('heel');
+			$shoesArray = array();
+
+			foreach($shoes as $s){
+				$shoesArray[] = $s->heel; 
+			};
+
+			$i = 0;
+			if(!in_array($heel, $shoesArray, true)){
+			while (!in_array($heel, $shoesArray, true)){
+				$i++;
+				if(in_array(($heel + $i), $shoesArray,true)){
+					$heel = $heel + $i;
+				} 
+				elseif (in_array(($heel - $i), $shoesArray,true)){
+					$heel = $heel - $i;
+					}
+				}
+			}
+
 
 			$shoes3 = $this->getShoes()
 						->where("season", $weatherFinal)
@@ -101,9 +102,9 @@ class Model extends Nette\Object {
 				} 
 				elseif (in_array(($price - $k), $shoesArray3, true)){
 					$price = $price - $k;
+					}
 				}
 			}
-		}
 	
 		$id = $this->getShoes()
 				->where("season", $weatherFinal)
@@ -112,7 +113,8 @@ class Model extends Nette\Object {
 				->where("price",$price)
 				->order('RAND()')
 				->fetch();
-		return $color;
+		return $id->id;
+
 		}
 	}
 
@@ -153,6 +155,7 @@ class Model extends Nette\Object {
 		};
 
 		$i=0;
+		$color = (int) $color;
 
 		if(!in_array($color, $shoesArray, true)){
 			while (!in_array($color, $shoesArray, true)){
